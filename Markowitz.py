@@ -52,8 +52,6 @@ Problem 1:
 
 Implement an equal weighting strategy as dataframe "eqw". Please do "not" include SPY.
 """
-
-
 class EqualWeightPortfolio:
     def __init__(self, exclude):
         self.exclude = exclude
@@ -95,7 +93,6 @@ class EqualWeightPortfolio:
             self.calculate_portfolio_returns()
 
         return self.portfolio_weights, self.portfolio_returns
-
 
 """
 Problem 2:
