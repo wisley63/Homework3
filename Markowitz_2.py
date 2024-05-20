@@ -118,7 +118,6 @@ class MyPortfolio:
 
         return self.portfolio_weights, self.portfolio_returns
 
-
 """
 Assignment Judge
 
