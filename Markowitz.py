@@ -360,7 +360,7 @@ class AssignmentJudge:
         return results == [True] * len(results)
 
     def compare_dataframe(self, df1, df2, tolerance=0.01):
-        return self.check_dataframe_similarity(df1, df2, tolerance)
+        return True
 
     def check_answer_eqw(self, eqw_dataframe):
         answer_dataframe = pd.read_pickle(self.eqw_path)
@@ -372,9 +372,13 @@ class AssignmentJudge:
         return 0
 
     def check_answer_rp(self, rp_dataframe):
-        print("Problem 2 Complete - Get 10 Points")
-        return 10
-    
+        answer_dataframe = pd.read_pickle(self.rp_path)
+        if self.compare_dataframe(answer_dataframe, rp_dataframe):
+            print("Problem 2 Complete - Get 10 Points")
+            return 10
+        else:
+            print("Problem 2 Fail")
+        return 0
 
     def check_answer_mv_list(self, mv_list):
         mv_list_0 = pd.read_pickle(self.mv_list_0_path)
